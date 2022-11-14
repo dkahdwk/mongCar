@@ -7,7 +7,10 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean": "cd android && ./gradlew clean && cd ..",
+    "pod": "cd ios && arch -x86_64 pod install && cd ..",
+    "cache": "npm start -- --reset-cache"
   },
   "dependencies": {
     "@types/react": "^18.0.25",
