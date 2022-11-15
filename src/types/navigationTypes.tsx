@@ -1,3 +1,4 @@
 export type CustomStackParamList = {
-  Main: undefined;
-}
+  HomeMainScreen: undefined;
+  HomeSubScreen: undefined;
+};

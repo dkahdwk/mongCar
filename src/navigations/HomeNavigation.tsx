@@ -1,16 +1,8 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { CustomStackParamList } from 'types/navigationTypes';
+import NavigationScreens from 'navigations/NavigationScreens';
 
 const HomeNavigation = () => {
-  const navigation = useNavigation<StackNavigationProp<CustomStackParamList>>();
-  return (
-    <>
-      {/*  */}
-      {/*  */}
-    </>
-  );
+  return <NavigationScreens mainScreen="Home" />;
 };
 
 export default HomeNavigation;
