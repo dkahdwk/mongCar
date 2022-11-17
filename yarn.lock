@@ -6644,6 +6644,11 @@ react-native-codegen@^0.0.17:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-config@^1.4.11:
+  version "1.4.11"
+  resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.4.11.tgz#f9ea08a8dffbe3fd4f2187d80d2594756526dee8"
+  integrity sha512-PdBFnfR3pljUNrJu4B2wiJ9TbAiz1J1WcG5KP8AFBqZi8ve5MV/CTCDnANaGrqhOxkBDJV73D/SrMENHe7TKBg==
+
 react-native-geolocation-service@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-5.3.1.tgz#4ce1017789da6fdfcf7576eb6f59435622af4289"
