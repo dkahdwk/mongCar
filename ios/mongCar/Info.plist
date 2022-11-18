@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>지역표시에 사용됩니다.</string>
+	<string/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>지역표시에 사용됩니다.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -41,8 +41,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -57,5 +55,14 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSansKR-Black-Alphabetic.otf</string>
+		<string>NotoSansKR-Bold-Alphabetic.otf</string>
+		<string>NotoSansKR-Light-Alphabetic.otf</string>
+		<string>NotoSansKR-Medium-Alphabetic.otf</string>
+		<string>NotoSansKR-Regular-Alphabetic.otf</string>
+		<string>NotoSansKR-Thin-Alphabetic.otf</string>
+	</array>
 </dict>
 </plist>
