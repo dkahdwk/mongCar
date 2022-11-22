@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useRef } from 'react';
 import { MobXProviderContext, ProviderProps } from 'mobx-react';
 import { shallowEqual } from 'mobx-react/src/utils/utils';
-import AuthStore from './AuthStore';
-import MapStore from './MapStore';
-import UIStore from './UIStore';
+import CommonStore from 'stores/CommonStore';
+import AuthStore from 'stores/AuthStore';
+import MapStore from 'stores/MapStore';
+import UIStore from 'stores/UIStore';
 
 // eslint-disable-next-line import/prefer-default-export
 export const RootStore = {
+  commonStore: new CommonStore(),
   uiStore: new UIStore(),
   authStore: new AuthStore(),
   mapStore: new MapStore(),
