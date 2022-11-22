@@ -420,7 +420,7 @@ const MarketSearchMapScreen = observer(() => {
     });
     const unsubscribe = navigation.addListener('blur', () => {
       commonStore.setBottomTabShow(true);
-      mapStore.init();
+      mapStore.setGoogleRegions(undefined);
     });
 
     return () => {
