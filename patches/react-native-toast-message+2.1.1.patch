@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-toast-message/lib/src/hooks/useSlideAnimation.js b/node_modules/react-native-toast-message/lib/src/hooks/useSlideAnimation.js
+index 511b693..a63c11a 100644
+--- a/node_modules/react-native-toast-message/lib/src/hooks/useSlideAnimation.js
++++ b/node_modules/react-native-toast-message/lib/src/hooks/useSlideAnimation.js
+@@ -15,7 +15,7 @@ export function useSlideAnimation({ position, height, topOffset, bottomOffset, k
+     const animate = React.useCallback((toValue) => {
+         Animated.spring(animatedValue.current, {
+             toValue,
+-            useNativeDriver: true,
++            useNativeDriver: false,
+             friction: 8
+         }).start();
+     }, []);
