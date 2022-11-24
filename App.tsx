@@ -3,6 +3,7 @@ import NavController from 'navigations/NavController';
 import { ThemeProvider } from 'styled-components';
 import { MobxProvider } from 'stores/RootStore';
 import { StatusBar } from 'react-native';
+import Modal from 'components/Modal';
 import theme from 'styles/theme';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           translucent
         />
         <NavController />
+        <Modal />
       </ThemeProvider>
     </MobxProvider>
   );

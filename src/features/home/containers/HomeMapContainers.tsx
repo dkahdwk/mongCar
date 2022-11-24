@@ -410,7 +410,7 @@ const MarketSearchMapScreen = observer(() => {
     getMyLocation({ isCurrentShownConfirm: false });
 
     navigation.setOptions({
-      header: () => <Header title={'지도 검색'} />,
+      header: () => <Header title={'지도 검색'} useBackButton={false} />,
     });
     const subscribe = navigation.addListener('focus', () => {
       commonStore.setBottomTabShow(false);
@@ -420,7 +420,7 @@ const MarketSearchMapScreen = observer(() => {
     });
     const unsubscribe = navigation.addListener('blur', () => {
       commonStore.setBottomTabShow(true);
-      mapStore.init();
+      mapStore.setGoogleRegions(undefined);
     });
 
     return () => {

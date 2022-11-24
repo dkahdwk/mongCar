@@ -1,0 +1,13 @@
+diff --git a/node_modules/@react-native-community/cli-platform-ios/build/commands/runIOS/index.js b/node_modules/@react-native-community/cli-platform-ios/build/commands/runIOS/index.js
+index 0b2a2cf..d743e97 100644
+--- a/node_modules/@react-native-community/cli-platform-ios/build/commands/runIOS/index.js
++++ b/node_modules/@react-native-community/cli-platform-ios/build/commands/runIOS/index.js
+@@ -495,7 +495,7 @@ var _default = {
+   options: [{
+     name: '--simulator <string>',
+     description: 'Explicitly set simulator to use. Optionally include iOS version between ' + 'parenthesis at the end to match an exact version: "iPhone 6 (10.0)"',
+-    default: 'iPhone 13'
++    // default: 'iPhone 13'
+   }, {
+     name: '--configuration <string>',
+     description: 'Explicitly set the scheme configuration to use',
