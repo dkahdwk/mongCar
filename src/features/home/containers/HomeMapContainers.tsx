@@ -4,6 +4,7 @@ import { RegionDto, RegionCountDto, ItemDto } from 'features/home/dummy/DummyDto
 import { BackHandler, FlatList, Platform, View } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { CustomStackParamList } from 'types/navigationTypes';
+import { mapItems } from 'features/home/dummy/DummyData';
 import { ModalOptions } from 'types/interfaces';
 import { commaToPrice } from 'utils/TextHelper';
 import { useStore } from 'stores/RootStore';
@@ -470,8 +471,8 @@ const MarketSearchMapScreen = observer(() => {
               }}
               onPress={() => handleMapClick()}
             >
-              {/* {typeof itemStore.itemByMap !== 'undefined' &&
-                itemStore.itemByMap.map((item: RegionCountDto) => (
+              {typeof mapItems !== 'undefined' &&
+                mapItems.map((item: RegionCountDto) => (
                   <Marker
                     tracksViewChanges={false}
                     key={item?.region?.code}
@@ -488,7 +489,7 @@ const MarketSearchMapScreen = observer(() => {
                       <CustomMarkerTitle>{getLocation(item?.region?.address)}</CustomMarkerTitle>
                     </CustomMarker>
                   </Marker>
-                ))} */}
+                ))}
             </MapView>
             {!isMax && (
               <MyLocationButton headerViewHeight={headerViewHeight} onPress={handleGoMyLocation}>
