@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import { useStore } from 'stores/RootStore';
 import { observer } from 'mobx-react';
+import ProfileNavigation from 'navigations/ProfileNavigation';
 import HomeNavigation from 'navigations/HomeNavigation';
 import styled from 'styled-components/native';
 
 const NavController = observer(() => {
   const Tab = createBottomTabNavigator();
-  const Stack = createStackNavigator();
   const { commonStore } = useStore();
 
   return (
@@ -17,10 +16,7 @@ const NavController = observer(() => {
       <Tab.Navigator
         backBehavior={'none'}
         initialRouteName={'Home'}
-        tabBarOptions={{
-          activeTintColor: '#111',
-          // style: [!commonStore.isBottomTabShow ? { display: 'none' } : {}],
-        }}
+        tabBarOptions={{ activeTintColor: '#111' }}
       >
         <Tab.Screen
           name={'Home'}
@@ -42,6 +38,27 @@ const NavController = observer(() => {
             },
           }}
           component={HomeNavigation}
+        />
+        <Tab.Screen
+          name={'Profile'}
+          options={{
+            title: '프로필',
+            tabBarVisible: commonStore.isBottomTabShow,
+            tabBarIcon: ({ focused }: { focused: boolean }) => {
+              return (
+                <BottomTabIcon
+                  focused={focused}
+                  size={52}
+                  source={
+                    focused
+                      ? require('assets/images/navigation/marketOn.png')
+                      : require('assets/images/navigation/marketOff.png')
+                  }
+                />
+              );
+            },
+          }}
+          component={ProfileNavigation}
         />
       </Tab.Navigator>
     </NavigationContainer>

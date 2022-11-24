@@ -4,7 +4,7 @@ import { CustomStackParamList } from 'types/navigationTypes';
 import AllScreens from 'navigations/AllScreens';
 
 interface DefaultProps {
-  mainScreen: 'Home' | 'Market' | 'Community' | 'Talk' | 'Property';
+  mainScreen: 'Home' | 'Profile';
 }
 
 const NavigationScreens = ({ mainScreen }: DefaultProps) => {
@@ -18,6 +18,14 @@ const NavigationScreens = ({ mainScreen }: DefaultProps) => {
             options={{ headerShown: true }}
             name={'HomeMainScreen'}
             component={AllScreens.HomeMainScreen}
+          />
+        );
+      case 'Profile':
+        return (
+          <Stack.Screen
+            options={{ headerShown: true }}
+            name={'ProfileMainScreen'}
+            component={AllScreens.ProfileMainScreen}
           />
         );
       default:
