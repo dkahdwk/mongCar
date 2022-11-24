@@ -12,6 +12,12 @@ import Config from 'react-native-config';
 import Text from 'components/Text';
 import axios from 'axios';
 
+interface MapInfoTypes {
+  address: string;
+  longitude: string;
+  latitude: string;
+}
+
 const SearchLocationModal = observer(() => {
   const { mapStore, uiStore } = useStore();
   const searchInputRef = useRef<TextInput>(null);
@@ -56,13 +62,11 @@ const SearchLocationModal = observer(() => {
     }, 200);
   };
 
-  const savMapInfo = async (response: any) => {
+  const savMapInfo = async (mapInfo: MapInfoTypes) => {
     /** 검색한 결과의 뎁스가  */
-    if (typeof response !== 'undefined') {
-      if (typeof response?.[0]?.address !== 'undefined') {
-        mapStore.setSingleRoadAddress(response?.[0]?.address);
-        uiStore.modal.apply(response?.[0]);
-      }
+    if (typeof mapInfo !== 'undefined') {
+      mapStore.setSingleRoadAddress(mapInfo?.address);
+      uiStore.modal.apply(mapInfo);
     } else {
       return Alert.alert('실패', '지역은 동 혹은 면까지 입력해주세요!');
     }
@@ -100,7 +104,11 @@ const SearchLocationModal = observer(() => {
             const geocodingLongitude = geocoding.addresses[0].x;
             const geocodingLatitude = geocoding.addresses[0].y;
 
-            // return savMapInfo(response);
+            return savMapInfo({
+              address: reverseGeocodingAddress,
+              longitude: geocodingLongitude,
+              latitude: geocodingLatitude,
+            });
           },
         );
       })
@@ -130,7 +138,7 @@ const SearchLocationModal = observer(() => {
     }
   };
 
-  /** 지역 검색 결과 선택 */
+  // 지역 검색 결과 선택
   const handleSelectAddress = async (item: any) => {
     await geocodingQuery(item);
   };
