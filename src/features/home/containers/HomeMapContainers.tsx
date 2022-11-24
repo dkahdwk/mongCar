@@ -413,7 +413,7 @@ const MarketSearchMapScreen = observer(() => {
       header: () => <Header title={'지도 검색'} useBackButton={false} />,
     });
     const subscribe = navigation.addListener('focus', () => {
-      commonStore.setBottomTabShow(false);
+      commonStore.setBottomTabShow(true);
 
       // 처음 화면에 진입인지를 파악해주는 state (android 이슈때문에 필요)
       setFirstEntry(true);
