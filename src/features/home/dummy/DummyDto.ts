@@ -14,6 +14,7 @@ export interface RegionCountDto {
 
   /** @format int64 */
   count?: number;
+  items?: any;
 }
 
 export interface UserDto {

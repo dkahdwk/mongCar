@@ -275,11 +275,8 @@ const MarketSearchMapScreen = observer(() => {
     if (selectMarkerItem?.region?.address !== item.region?.address) {
       try {
         setIsMapItemLoading(true);
-        // await itemStore.setMapItems([]);
-        // await itemStore.getMapItems({
-        //   regionCode: item.region?.code,
-        //   ...currentParameter,
-        // });
+        await mapStore.setMapItems([]);
+        await mapStore.setMapItems(item?.items);
         setIsMapItemLoading(false);
       } catch (e) {
         console.log(e);
@@ -537,8 +534,7 @@ const MarketSearchMapScreen = observer(() => {
           <BottomSheetFlatList
             ref={flatListRef}
             scrollEnabled
-            // data={toJS(itemStore.mapItems)}
-            data={[]}
+            data={toJS(mapStore.mapItems)}
             contentContainerStyle={{ flexGrow: 1 }}
             renderItem={renderItem}
             numColumns={1}

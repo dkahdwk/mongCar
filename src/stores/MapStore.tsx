@@ -21,6 +21,9 @@ class MapStore {
   // 지역 검색
   singleRoadAddress = '';
 
+  // 지역 상품
+  mapItems: any = undefined;
+
   setGoogleRegions = (googleRegions: any) => {
     this.googleRegions = googleRegions;
   };
@@ -34,6 +37,11 @@ class MapStore {
     if (typeof address === 'string') {
       this.singleRoadAddress = address;
     }
+  };
+
+  // 지역 상품 저장
+  setMapItems = (mapItems: any) => {
+    this.mapItems = mapItems;
   };
 }
 
